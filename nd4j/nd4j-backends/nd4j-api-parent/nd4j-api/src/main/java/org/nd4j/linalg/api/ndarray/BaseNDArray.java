@@ -3391,7 +3391,7 @@ public abstract class BaseNDArray implements INDArray, Iterable {
     @Override
     public double[][] toDoubleMatrix() {
         if(!isMatrix()) {
-            throw new ND4JIllegalStateException("Unable to create a 2d array from a non matrix! Array shape: " + Arrays.toString(this.shape()));
+            throw new ND4JIllegalStateException("Unable to create a 2d array from a non matrix! Shape: " + Shape.shapeToStringShort(this));
         }
 
         if (this.size(0) > Integer.MAX_VALUE || this.size(1) > Integer.MAX_VALUE)
@@ -3408,7 +3408,7 @@ public abstract class BaseNDArray implements INDArray, Iterable {
     @Override
     public double[] toDoubleVector() {
         if(!isVectorOrScalar()) {
-            throw new ND4JIllegalStateException("Unable to create a 1d array from a non vector!");
+            throw new ND4JIllegalStateException("Unable to create a 1d array from a non vector! Shape: " + Shape.shapeToStringShort(this));
         }
 
 
@@ -3418,7 +3418,7 @@ public abstract class BaseNDArray implements INDArray, Iterable {
     @Override
     public float[] toFloatVector() {
         if(!isVectorOrScalar()) {
-            throw new ND4JIllegalStateException("Unable to create a 1d array from a non vector!");
+            throw new ND4JIllegalStateException("Unable to create a 1d array from a non vector! Shape: " + Shape.shapeToStringShort(this));
         }
 
         return dup().data().asFloat();
@@ -3427,7 +3427,7 @@ public abstract class BaseNDArray implements INDArray, Iterable {
     @Override
     public float[][] toFloatMatrix() {
         if(!isMatrix()) {
-            throw new ND4JIllegalStateException("Unable to create a 2d array from a non matrix!");
+            throw new ND4JIllegalStateException("Unable to create a 2d array from a non matrix! Shape: " + Shape.shapeToStringShort(this));
         }
 
         if (this.rows() > Integer.MAX_VALUE || this.columns() > Integer.MAX_VALUE)
@@ -3444,7 +3444,7 @@ public abstract class BaseNDArray implements INDArray, Iterable {
     @Override
     public int[] toIntVector() {
         if(!isVectorOrScalar()) {
-            throw new ND4JIllegalStateException("Unable to create a 1d array from a non vector!");
+            throw new ND4JIllegalStateException("Unable to create a 1d array from a non vector! Shape: " + Shape.shapeToStringShort(this));
         }
         return dup().data().asInt();
     }
@@ -3452,7 +3452,7 @@ public abstract class BaseNDArray implements INDArray, Iterable {
     @Override
     public long[] toLongVector() {
         if(!isVectorOrScalar()) {
-            throw new ND4JIllegalStateException("Unable to create a 1d array from a non vector!");
+            throw new ND4JIllegalStateException("Unable to create a 1d array from a non vector! Shape: " + Shape.shapeToStringShort(this));
         }
         return dup().data().asLong();
     }
@@ -3460,7 +3460,7 @@ public abstract class BaseNDArray implements INDArray, Iterable {
     @Override
     public long[][] toLongMatrix() {
         if(!isMatrix()) {
-            throw new ND4JIllegalStateException("Unable to create a 2d array from a non matrix!");
+            throw new ND4JIllegalStateException("Unable to create a 2d array from a non matrix! Shape: " + Shape.shapeToStringShort(this));
         }
 
         if (this.rows() > Integer.MAX_VALUE || this.columns() > Integer.MAX_VALUE)
@@ -3477,7 +3477,7 @@ public abstract class BaseNDArray implements INDArray, Iterable {
     @Override
     public int[][] toIntMatrix() {
         if(!isMatrix()) {
-            throw new ND4JIllegalStateException("Unable to create a 2d array from a non matrix!");
+            throw new ND4JIllegalStateException("Unable to create a 2d array from a non matrix! Shape: " + Shape.shapeToStringShort(this));
         }
 
         if (this.rows() > Integer.MAX_VALUE || this.columns() > Integer.MAX_VALUE)
