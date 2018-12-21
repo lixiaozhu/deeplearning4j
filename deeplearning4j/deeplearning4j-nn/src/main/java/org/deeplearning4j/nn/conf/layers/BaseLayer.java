@@ -94,6 +94,8 @@ public abstract class BaseLayer extends Layer implements Serializable, Cloneable
         BaseLayer clone = (BaseLayer) super.clone();
         if (clone.dist != null)
             clone.dist = clone.dist.clone();
+        if(clone.iDropout != null)
+            clone.iDropout = clone.iDropout.clone();
         return clone;
     }
 
